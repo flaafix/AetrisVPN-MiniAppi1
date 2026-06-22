@@ -49,7 +49,7 @@ async def check_sub_callback(callback: types.CallbackQuery):
     else:
         await callback.answer("❌ Вы еще не подписались!", show_alert=True)
 
-# Веб-сервер для стабильности Render
+# Веб-сервер для стабильности Rende
 async def web_server(request): return web.Response(text="Bot is running!")
 
 async def start_web_server():
