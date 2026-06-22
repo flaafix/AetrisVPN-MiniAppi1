@@ -32,8 +32,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 from aiohttp import web
 
-# Твой существующий код бота здесь...
-# (bot, dp, и функция main() с dp.start_polling)
+# ... (весь твой текущий код бота) ...
 
 async def web_server(request):
     return web.Response(text="Bot is running!")
@@ -43,11 +42,10 @@ async def start_web_server():
     app.router.add_get("/", web_server)
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, host="0.0.0.0", port=8080)
+    site = web.TCPSite(runner, host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
     await site.start()
 
 async def main():
-    # Запускаем и бота, и веб-сервер одновременно
     await asyncio.gather(dp.start_polling(bot), start_web_server())
 
 if __name__ == "__main__":
