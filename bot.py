@@ -30,3 +30,14 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+    from aiohttp import web
+
+async def handle(request):
+    return web.Response(text="Bot is running!")
+
+app = web.Application()
+app.router.add_get('/', handle)
+
+# И в конце своего кода перед запуском, вместо простого запуска, 
+# нужно запустить и бота, и веб-сервер. 
+# Если хочешь, я напишу, как это правильно объединить.
