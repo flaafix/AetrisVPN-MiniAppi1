@@ -6,7 +6,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiohttp import web
 
-# Настройки
+# Настройк
 TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = -1003960873649  # Твой ID канала
 CHANNEL_URL = "https://t.me/AetrisVPN" # Ссылка на канал
